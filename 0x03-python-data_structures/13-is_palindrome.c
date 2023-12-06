@@ -23,9 +23,9 @@ int len_list(listint_t *head)
  * @head: it's a head.
  * Return: Always 0.
  */
-void reverse(listint_t **head)
+void reverse(listint_t *head)
 {
-	listint_t *cur = *head, *prev = NULL, *nex;
+	listint_t *cur = head, *prev = NULL, *nex;
 
 	while (cur != NULL)
 	{
@@ -34,7 +34,7 @@ void reverse(listint_t **head)
 		prev = cur;
 		cur = nex;
 	}
-	*head = prev;
+	head = prev;
 }
 /**
  * is_plaindrom - check the code for
