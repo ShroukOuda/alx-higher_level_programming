@@ -2,6 +2,5 @@
 '''list module'''
 
 
-
 def lookup(obj):
     return dir(obj)
