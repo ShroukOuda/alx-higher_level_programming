@@ -4,5 +4,8 @@
 
 def write_file(filename="", text=""):
     '''----------'''
+    cnt = 0
     with open(filename, "w", encoding="UTF8") as f:
-        print(f.write(text), end='')
+        f.write(text)
+    cnt = len(text)
+    return cnt
