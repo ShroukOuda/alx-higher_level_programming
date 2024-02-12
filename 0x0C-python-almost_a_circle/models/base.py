@@ -35,3 +35,17 @@ class Base:
             list_objs = [obj.to_dictionary() for obj in list_objs]
         with open(filename, "w", encoding="utf-8") as file:
             file.write(cls.to_json_string(list_objs))
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''-------'''
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls is Rectangle:
+            new = Rectangle(1, 1)
+        elif cls is Square:
+            new = Square(1)
+        else:
+            new = None
+        new.update(**dictionary)
+        return new
