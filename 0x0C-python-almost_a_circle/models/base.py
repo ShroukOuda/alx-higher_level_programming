@@ -26,3 +26,12 @@ class Base:
         if json_string is None:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        '''-----'''
+        filename = cls.__name__ + ".json"
+        if list_objs is not None:
+            list_objs = [obj.to_dictionary() for obj in list_objs]
+        with open(filename, "w", encoding="utf-8") as file:
+            file.write(cls.to_json_string(list_objs))
