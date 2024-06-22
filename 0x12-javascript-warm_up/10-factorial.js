@@ -2,9 +2,7 @@
 const { argv } = require('node:process');
 const arg = Number(argv[2]);
 function fact (num) {
-  let fact = 1;
-  if (isNaN(num)) { return 1; }
-  for (let i = num; i > 1; i--) { fact *= i; }
-  return fact;
+  if (isNaN(num) || num === 0) { return 1; }
+  return num * fact(num - 1);
 }
-console.log(fact(arg[2]));
+console.log(fact(arg));
